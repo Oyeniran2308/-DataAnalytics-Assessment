@@ -49,7 +49,25 @@ Scenario: The ops team wants to flag accounts with no inflow transactions for ov
 Task: Find all active accounts (savings or investments) with no transactions in the last 1 year (365 days) .
 
 ##### Findings
+A total of 893 accounts have not recorded any activity for the past 365 days or more. Based on the categorization logic:
 
+69 accounts are classified as Investment accounts
+
+542 accounts fall under Savings
+
+282 accounts are categorized as Unknown
+
+(CASE 
+        WHEN pp.is_regular_savings = 1 THEN 'Savings'
+        WHEN pp.is_a_fund = 1 THEN 'Investment'
+        ELSE 'Unknown'
+    END AS type),
+
+##### RECOMMENDATION
+
+Further investigation be carried out to understand why a large portion (542) of savings account holders have been inactive for over a year.
+
+The 282 accounts labeled as "Unknown" should be reviewed to determine why they could not be categorized and to ensure data consistency and completeness.
 
 
 ### 4. Customer Lifetime Value (CLV) Estimation
@@ -61,6 +79,9 @@ Estimated CLV (Assume: CLV = (total_transactions / tenure) * 12 * avg_profit_per
 Order by estimated CLV from highest to lowest
 
 ###### Findings
+Out of the 873 returned customers, Chima Ataman (Customer ID: 1909df3eba2548cfa3b9c270112bd262) 
+stands out with the 🥇 highest estimated Customer Lifetime Value (CLV). Over a tenure of 33 months, 
+Chima has completed 2,383 transactions, making him the top contributor in terms of long-term value to the business.
 
 
 
