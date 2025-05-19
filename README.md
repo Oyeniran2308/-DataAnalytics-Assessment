@@ -31,14 +31,14 @@ Task: Calculate the average number of transactions per customer per month and ca
 "Low Frequency" (≤2 transactions/month)
 
 ##### FINDINGS 
-The Customer transaction Frequency was majorly categorise into three (four if the condition is not mets); 
+The Customer transaction Frequency was categorise into four ; 
 * High Frequency for monthly transaction ≥10
 
 * Medium Frequency for monthly transaction between 3-9
 
 * Low Frequency for transaction ≤2 
 
-. and Uncategorized for transaction that does not fall in the category.
+* Uncategorized for transaction that does not fall in the category.
 
 For High Frequency, there are  173 customer with an average of 77.74 transaction per month
 Medium Frequency, there are  174 customer with an average of 4.78 transaction per month
